@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a6970c0-810e-405e-a3ef-dcc5b7390cc7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/db.sqlite3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/PEP.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/PEPapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/PEPapp/settings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/PEPapp/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/PEPapp/wsgi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PEPapp/manage.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-admin.py" />
-    </list>
+    <list default="true" id="2a6970c0-810e-405e-a3ef-dcc5b7390cc7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +142,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
