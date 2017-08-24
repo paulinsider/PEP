@@ -18,8 +18,12 @@ def startapp(request):
     object = Container_list.objects.get(**whereparam)
     if object.status == 1:
         return HttpResponse('container has exist!')
-    path = "./" + object.path + " start"
-    os.system(path)
+    path = "sh " + object.path + " start"
+    res=os.popen(path)
+    result=res.readlines()
+    output = ''
+    for line in result:
+        output+=line
     object.status = 1
     object.save()
     return HttpResponse('container has been build!url : 112.74.63.70:9001')
@@ -28,7 +32,7 @@ def stopapp(request):
     id = request.GET['id']
     whereparam = {'id': id}
     object = Container_list.objects.get(**whereparam)
-    path = "./" + object.path + " start"
+    path = "sh " + object.path + " stop"
     os.system(path)
     object.status = 0
     object.save()
