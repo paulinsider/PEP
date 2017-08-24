@@ -65,7 +65,7 @@
                     {% ifequal var.status 1 %}
                     <form role="form" action="../stopapp" method="get">
                         <input type="hidden" name="id" value="{{var.id}}">
-                    <h4>地址： {{ var.url }}</h4>
+                        <h4>地址： <a href="{{ var.url }}">进入练习</a></h4>
                     <button class="btn btn-danger button-right" id="stopapp" type="submit" name="stopapp">停止</button></li>
                     {% else %}
                     <form role="form" action="../startapp?id={{var.id}}" method="get">
