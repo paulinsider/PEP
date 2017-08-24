@@ -16,16 +16,11 @@ def startapp(request):
     id = request.GET['id']
     whereparam = {'id':id}
     object = Container_list.objects.get(**whereparam)
-    if object.status == 1:
-        return HttpResponse('container has exist!')
-    path = "sh " + object.path + " start"
-    res=os.popen(path)
-    result=res.readlines()
-    output = ''
-    for line in result:
-        output+=line
-    object.status = 1
-    object.save()
+    if object.status == 0:
+        path = "sh /home/PEP.sh " + object.path + " start"
+        os.system(path)
+        object.status = 1
+        object.save()
     response = []
     list = Container_list.objects.all()
     for var in list:
@@ -36,10 +31,11 @@ def stopapp(request):
     id = request.GET['id']
     whereparam = {'id': id}
     object = Container_list.objects.get(**whereparam)
-    path = "sh " + object.path + " stop"
-    os.system(path)
-    object.status = 0
-    object.save()
+    if object.status == 1:
+        path =  "sh /home/PEP.sh " + object.path + " stop"
+        os.system(path)
+        object.status = 0
+        object.save()
     response = []
     list = Container_list.objects.all()
     for var in list:
