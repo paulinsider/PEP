@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.static import serve
+from PEPapp import settings
 from . import view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^list/', view.list),
     url(r'^$', view.index),
-    url(r'^index/',view.index),
+    url(r'^index/', view.index),
     url(r'^startapp$', view.startapp),
-    url(r'^stopapp$',view.stopapp),
+    url(r'^stopapp$', view.stopapp),
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_URL}),
+    url(r'^list/static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_URL}),
 ]

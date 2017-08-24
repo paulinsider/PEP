@@ -10,7 +10,7 @@ def list(request):
     list = Container_list.objects.all()
     for var in list:
         response.append(var)
-    return HttpResponse(response)
+    return render(request, 'common/list.html', {'data':response})
 
 def startapp(request):
     id = request.GET['id']
@@ -26,7 +26,11 @@ def startapp(request):
         output+=line
     object.status = 1
     object.save()
-    return HttpResponse('container has been build!url : 112.74.63.70:9001')
+    response = []
+    list = Container_list.objects.all()
+    for var in list:
+        response.append(var)
+    return render(request, 'common/list.html', {'data': response})
 
 def stopapp(request):
     id = request.GET['id']
@@ -36,4 +40,8 @@ def stopapp(request):
     os.system(path)
     object.status = 0
     object.save()
-    return HttpResponse("container has stopped")
+    response = []
+    list = Container_list.objects.all()
+    for var in list:
+        response.append(var)
+    return render(request, 'common/list.html', {'data': response})

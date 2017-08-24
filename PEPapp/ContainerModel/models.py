@@ -7,3 +7,4 @@ class Container_list(models.Model):
     comment = models.CharField(max_length=500)
     path = models.CharField(max_length=100)
     status = models.IntegerField(default=0)
+    url = models.CharField(max_length=100,default='')
