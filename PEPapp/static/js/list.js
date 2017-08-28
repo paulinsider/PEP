@@ -16,9 +16,9 @@ $(function(){
                     var callback_dict = $.parseJSON(callback);
                     if(callback_dict.status == "failed"){
                         alert(callback_dict.comment);
+                        $(this).button('reset');
                     }else{
                         alert("成功");
-
                         location.reload(true);
                     }
                 }
