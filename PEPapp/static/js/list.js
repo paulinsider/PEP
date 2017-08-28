@@ -5,7 +5,8 @@ $(function(){
     var $url = "../manageApp/";
     $btn.on(
         "click",function(){
-            var $formname = "#manageApp"  + $(this).attr('name')
+            var $formname = "#manageApp"  + $(this).attr('name');
+            $(this).button('loading');
             $.ajax({
                 url:$url,
                 data:$($formname).serialize(),
@@ -17,6 +18,7 @@ $(function(){
                         alert(callback_dict.comment);
                     }else{
                         alert("成功");
+
                         location.reload(true);
                     }
                 }

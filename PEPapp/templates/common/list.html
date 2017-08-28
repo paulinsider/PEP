@@ -68,13 +68,13 @@
                         <input type="hidden" name="action" value="stop" >
                         {% csrf_token %}
                         <h4>地址： <a href="{{ var.url }}">进入练习</a></h4>
-                    <button class="btn btn-danger button-right" type="button" name="{{var.id}}">停止</button></li>
+                    <button class="btn btn-danger button-right" data-loading-text="Loading..." type="button" name="{{var.id}}">停止</button></li>
                     {% else %}
                     <form role="form" id = "manageApp{{var.id}}">
                         <input type="hidden" name="id" value="{{var.id}}">
                         <input type="hidden" name="action" value="start" >
                         {% csrf_token %}
-                    <button class="btn btn-info button-right" type="button" name="{{var.id}}">开启</button></li>
+                    <button class="btn btn-info button-right" data-loading-text="Loading..." type="button" name="{{var.id}}">开启</button></li>
                     {% endifequal %}
                 </form>
                 {% endfor %}
