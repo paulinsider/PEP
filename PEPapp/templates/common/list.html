@@ -63,14 +63,18 @@
 
                 <li class="list-group-item">{{ var.name }}
                     {% ifequal var.status 1 %}
-                    <form role="form" action="../stopapp" method="get">
+                    <form role="form" id = "manageApp{{var.id}}">
                         <input type="hidden" name="id" value="{{var.id}}">
+                        <input type="hidden" name="action" value="stop" >
+                        {% csrf_token %}
                         <h4>地址： <a href="{{ var.url }}">进入练习</a></h4>
-                    <button class="btn btn-danger button-right" id="stopapp" type="submit" name="stopapp">停止</button></li>
+                    <button class="btn btn-danger button-right" type="button" name="{{var.id}}">停止</button></li>
                     {% else %}
-                    <form role="form" action="../startapp?id={{var.id}}" method="get">
+                    <form role="form" id = "manageApp{{var.id}}">
                         <input type="hidden" name="id" value="{{var.id}}">
-                    <button class="btn btn-info button-right" id="startapp">开启</button></li>
+                        <input type="hidden" name="action" value="start" >
+                        {% csrf_token %}
+                    <button class="btn btn-info button-right" type="button" name="{{var.id}}">开启</button></li>
                     {% endifequal %}
                 </form>
                 {% endfor %}
@@ -80,6 +84,7 @@
     </div>
 </div>
 <script src="{%static 'js/jquery.js'%}"></script>
+<script src="{%static 'js/list.js'%}"></script>
 <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
 </body>
 </html>

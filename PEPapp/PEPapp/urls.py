@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^list/', view.list),
     url(r'^$', view.index),
     url(r'^index/', view.index),
+    url(r'^manageApp/', view.manageApp),
     url(r'^startapp$', view.startapp),
     url(r'^stopapp$', view.stopapp),
     url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_URL}),

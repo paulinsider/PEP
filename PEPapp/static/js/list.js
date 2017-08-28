@@ -1,22 +1,26 @@
-function startapp(id){
-$(function() {
-        $("#stopapp .btn").click(function(){
-            var post_data = {
-                "id" : id,
-            }
+$(function(){
+    var $btn=$(".btn");
+
+
+    var $url = "../manageApp/";
+    $btn.on(
+        "click",function(){
+            var $formname = "#manageApp"  + $(this).attr('name')
             $.ajax({
-                url: '../startapp',
-                type: "POST",
-                data: post_data,
-                success: function (data) {
-                    data = JSON.parse(data);
-                    if (data["status"] == 1) {
-                        setSceneTd(data["result"], scece_name, td);
-                    } else {
-                        alert(data["result"]);
+                url:$url,
+                data:$($formname).serialize(),
+                type:"post",
+                async: true,
+                success:function(callback){
+                    var callback_dict = $.parseJSON(callback);
+                    if(callback_dict.status == "failed"){
+                        alert(callback_dict.comment);
+                    }else{
+                        alert("成功");
+                        location.reload(true);
                     }
                 }
             });
-        });
-    });
-}
+        }
+    );
+})
