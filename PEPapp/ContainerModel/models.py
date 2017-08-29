@@ -8,3 +8,4 @@ class Container_list(models.Model):
     path = models.CharField(max_length=100)
     status = models.IntegerField(default=0)
     url = models.CharField(max_length=100,default='')
+    show_type = models.IntegerField(default=0)
